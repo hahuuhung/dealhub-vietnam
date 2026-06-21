@@ -13,13 +13,13 @@ export class VideosController {
 
   @UseGuards(AuthGuard)
   @Post(':id/like')
-  likeVideo(@Param('id') id: string, @Request() req) {
+  likeVideo(@Param('id') id: string, @Request() req: any) {
     return this.videosService.likeVideo(id, req.user.sub);
   }
 
   @UseGuards(AuthGuard)
   @Post(':id/comments')
-  addComment(@Param('id') id: string, @Request() req, @Body('content') content: string) {
+  addComment(@Param('id') id: string, @Request() req: any, @Body('content') content: string) {
     return this.videosService.addComment(id, req.user.sub, content);
   }
 }

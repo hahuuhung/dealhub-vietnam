@@ -3,10 +3,10 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { DH_DATA } from "@/lib/data";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function Header() {
-  const { language, setLanguage } = useLanguage();
+  const { lang, setLanguage } = useLanguage();
   const [mounted, setMounted] = useState(false);
   const [token, setToken] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState("all");

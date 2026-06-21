@@ -21,7 +21,7 @@ export class LivestreamsController {
   @UseGuards(AuthGuard, RolesGuard)
   @Roles('merchant')
   @Post('start')
-  startStream(@Request() req, @Body('title') title: string) {
+  startStream(@Request() req: any, @Body('title') title: string) {
     // In a real app, we'd lookup the merchantId by req.user.sub
     // For MVP, we'll assume the client sends the merchant ID or we find it.
     // Let's find merchant ID here

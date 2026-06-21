@@ -503,22 +503,6 @@ dealhub-web/
 └── styles/                       # CSS Modules
 ```
 
-### 3.3 Migration Plan: Demo → Production
-
-Chuyển đổi từ demo hiện tại sang Next.js production:
-
-```diff
-- Static HTML (index.html)          → Next.js pages with SSR/SSG
-- Inline mock data (data.js)        → API calls to backend
-- Client-side search (app.js)       → Elasticsearch via API
-- Modal-based UI                    → Full page routes + modals
-- Emoji placeholders                → Real images (uploaded)
-- localStorage cart                 → Server-side cart + auth
-- No authentication                 → JWT + OTP auth flow
-- No real payment                   → VNPay/MoMo/ZaloPay integration
-- No real booking                   → Real-time slot management
-```
-
 ---
 
 ## PHASE 4: Payment & Booking System

@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { Heart, MessageCircle, Share2, ShoppingBag, Plus } from 'lucide-react';
-import api from '@/lib/api';
+import { apiClient as api } from '@/lib/api';
 
 export default function SocialFeed() {
   const [videos, setVideos] = useState<any[]>([]);

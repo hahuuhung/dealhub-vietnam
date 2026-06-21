@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { io, Socket } from 'socket.io-client';
-import { Video, Mic, MicOff, VideoOff, Settings, Users, MessageSquare, Plus, CheckCircle2 } from 'lucide-react';
+import { Video, Mic, MicOff, VideoOff, Settings, Users, MessageSquare, Plus, CheckCircle2, ShoppingBag } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 export default function LivestreamStudio() {

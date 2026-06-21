@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Bot, X, Send } from 'lucide-react';
-import api from '@/lib/api';
+import { apiClient as api } from '@/lib/api';
 
 export default function AIAssistant() {
   const [isOpen, setIsOpen] = useState(false);

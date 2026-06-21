@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import api from '@/lib/api';
+import { apiClient as api } from '@/lib/api';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, LineChart, Line } from 'recharts';
 import { Filter, Download } from 'lucide-react';
 
