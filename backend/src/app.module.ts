@@ -9,9 +9,11 @@ import { OrdersModule } from './orders/orders.module';
 import { AnalyticsModule } from './analytics/analytics.module';
 import { VouchersModule } from './vouchers/vouchers.module';
 import { AdminModule } from './admin/admin.module';
+import { VideosModule } from './videos/videos.module';
+import { LivestreamsModule } from './livestreams/livestreams.module';
 
 @Module({
-  imports: [PrismaModule, DealsModule, AuthModule, BookingsModule, OrdersModule, AnalyticsModule, VouchersModule, AdminModule],
+  imports: [PrismaModule, DealsModule, AuthModule, BookingsModule, OrdersModule, AnalyticsModule, VouchersModule, AdminModule, VideosModule, LivestreamsModule],
   controllers: [AppController],
   providers: [AppService],
 })

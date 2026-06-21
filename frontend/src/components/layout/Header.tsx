@@ -1,11 +1,27 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { DH_DATA } from "@/lib/data";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Header() {
+  const { language, setLanguage } = useLanguage();
+  const [mounted, setMounted] = useState(false);
+  const [token, setToken] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState("all");
+
+  useEffect(() => {
+    setMounted(true);
+    setToken(localStorage.getItem('token'));
+  }, []);
+
+  const navLinks = [
+    { href: '/', label: 'Home' },
+    { href: '/nearby', label: 'Nearby' },
+    { href: '/social', label: 'Video Feed' },
+    { href: '/bookings', label: 'Bookings' }
+  ];
 
   const categories = [{ id: "all", name: "Tất cả", emoji: "🔥" }, ...DH_DATA.categories];
 

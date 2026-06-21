@@ -22,6 +22,9 @@ model User {
   bookings    Booking[]
   reviews     Review[]
   merchant    Merchant?
+  comments    Comment[]
+  likes       Like[]
+  follows     Follow[]
 }
 
 model Merchant {
@@ -40,6 +43,8 @@ model Merchant {
   user           User     @relation(fields: [userId], references: [id])
   deals          Deal[]
   livestreams    Livestream[]
+  videos         Video[]
+  followers      Follow[]
 }
 
 model Deal {
@@ -66,6 +71,7 @@ model Deal {
   vouchers      Voucher[]
   bookings      Booking[]
   reviews       Review[]
+  videos        Video[]
 }
 
 model Voucher {
@@ -144,5 +150,58 @@ model Livestream {
   endedAt     DateTime?
   createdAt   DateTime @default(now())
 
+  merchant    Merchant    @relation(fields: [merchantId], references: [id])
+  comments    Comment[]
+}
+
+model Video {
+  id          String   @id @default(uuid())
+  merchantId  String
+  dealId      String?
+  videoUrl    String
+  caption     String?
+  viewCount   Int      @default(0)
+  createdAt   DateTime @default(now())
+
   merchant    Merchant @relation(fields: [merchantId], references: [id])
+  deal        Deal?    @relation(fields: [dealId], references: [id])
+  comments    Comment[]
+  likes       Like[]
+}
+
+model Comment {
+  id           String   @id @default(uuid())
+  userId       String
+  videoId      String?
+  livestreamId String?
+  content      String
+  createdAt    DateTime @default(now())
+
+  user         User        @relation(fields: [userId], references: [id])
+  video        Video?      @relation(fields: [videoId], references: [id])
+  livestream   Livestream? @relation(fields: [livestreamId], references: [id])
+}
+
+model Like {
+  id        String   @id @default(uuid())
+  userId    String
+  videoId   String
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id])
+  video     Video    @relation(fields: [videoId], references: [id])
+
+  @@unique([userId, videoId])
+}
+
+model Follow {
+  id         String   @id @default(uuid())
+  userId     String
+  merchantId String
+  createdAt  DateTime @default(now())
+
+  user       User     @relation(fields: [userId], references: [id])
+  merchant   Merchant @relation(fields: [merchantId], references: [id])
+
+  @@unique([userId, merchantId])
 }
