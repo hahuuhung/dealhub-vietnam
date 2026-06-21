@@ -20,14 +20,14 @@ export default function Footer() {
           <h4>Người dùng</h4>
           <Link href="/nearby">Deal gần tôi</Link>
           <Link href="/profile/vouchers">Voucher của tôi</Link>
-          <Link href="/videos">Video review</Link>
-          <Link href="/live">Livestream</Link>
+          <Link href="/social">Video review</Link>
+          <Link href="/social">Livestream</Link>
         </div>
         <div className="footer__col">
           <h4>Doanh nghiệp</h4>
-          <Link href="/merchant/register">Đăng ký đối tác</Link>
+          <Link href="/login">Đăng ký đối tác</Link>
           <Link href="/merchant/deals/new">Tạo deal</Link>
-          <Link href="/merchant/live">Livestream bán hàng</Link>
+          <Link href="/merchant/studio">Livestream bán hàng</Link>
           <Link href="/merchant/analytics">Báo cáo & AI</Link>
         </div>
         <div className="footer__col">

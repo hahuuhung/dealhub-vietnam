@@ -1,0 +1,24 @@
+- `[x]` 1. Project Initialization
+  - `[x]` Move legacy demo files to `legacy-demo` directory.
+  - `[x]` Initialize Next.js 15 project for Frontend.
+  - `[x]` Initialize NestJS project for Backend.
+  - `[x]` Set up `docker-compose.yml` (Docker running, using PostgreSQL + Redis).
+- `[x]` 2. Backend Development (NestJS)
+  - `[x]` Set up Prisma ORM and define schema (Users, Merchants, Deals, Bookings, Orders).
+  - `[x]` Implement Auth Module (JWT).
+  - `[x]` Implement Deals Module (CRUD, featured, nearby).
+  - `[x]` Implement Bookings Module.
+  - `[x]` Implement Orders/Cart Module.
+- `[x]` 3. Frontend Development (Next.js)
+  - `[x]` Migrate existing vanilla CSS to the Next.js project.
+  - `[x]` Build layout components (Header, Footer, Navigation).
+  - `[x]` Build core UI components (DealCard, Modal, Toast).
+  - `[x]` Implement Landing Page (`/`).
+  - `[x]` Implement Deal Detail Page (`/deals/[id]`).
+  - `[x]` Implement Search and Filtering.
+  - `[x]` Implement Shopping Cart and Checkout Flow.
+  - `[x]` Implement Booking Flow.
+- `[x]` 4. Integration & Testing
+  - `[x]` Connect Frontend to Backend APIs.
+  - `[x]` Test end-to-end flows (Build successfully tested).
+  - `[x]` Create walkthrough documentation.

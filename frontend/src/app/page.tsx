@@ -98,7 +98,7 @@ export default function Home() {
           <div className="container">
             <div className="section__head">
               <h2 className="section__title">🔴 Livestream đang bán</h2>
-              <Link href="/live" className="section__link">Xem tất cả →</Link>
+              <Link href="/social" className="section__link">Xem tất cả →</Link>
             </div>
             <div className="live-row">
               {DH_DATA.livestreams.map((l) => (

@@ -71,7 +71,7 @@ export default function Header() {
               0
             </span>
           </button>
-          <Link href="/merchant/dashboard" className="btn btn--ghost" id="bizBtn">
+          <Link href="/merchant" className="btn btn--ghost" id="bizBtn">
             Doanh nghiệp
           </Link>
           <Link href="/login" className="btn btn--primary" id="loginBtn">

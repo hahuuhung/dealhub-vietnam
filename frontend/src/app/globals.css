@@ -2,6 +2,8 @@
    DealHub Vietnam — Styles
    Mobile-first. Groupon + Foody + TikTok + Booking inspired.
    ============================================================ */
+@import "tailwindcss";
+
 
 /* ---------- Design tokens ---------- */
 :root {
