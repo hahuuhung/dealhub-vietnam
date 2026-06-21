@@ -11,9 +11,10 @@ import { VouchersModule } from './vouchers/vouchers.module';
 import { AdminModule } from './admin/admin.module';
 import { VideosModule } from './videos/videos.module';
 import { LivestreamsModule } from './livestreams/livestreams.module';
+import { AiModule } from './ai/ai.module';
 
 @Module({
-  imports: [PrismaModule, DealsModule, AuthModule, BookingsModule, OrdersModule, AnalyticsModule, VouchersModule, AdminModule, VideosModule, LivestreamsModule],
+  imports: [PrismaModule, DealsModule, AuthModule, BookingsModule, OrdersModule, AnalyticsModule, VouchersModule, AdminModule, VideosModule, LivestreamsModule, AiModule],
   controllers: [AppController],
   providers: [AppService],
 })

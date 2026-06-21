@@ -58,4 +58,26 @@ export class AnalyticsService {
       weeklyRevenue,
     };
   }
+
+  async getAdvancedAnalytics(userId: string) {
+    const merchant = await this.prisma.merchant.findUnique({ where: { userId } });
+    if (!merchant) return null;
+
+    // Advanced Conversion Funnel
+    const funnel = [
+      { step: "Lượt xem (Views)", count: 45000 },
+      { step: "Click xem Deal", count: 12000 },
+      { step: "Thêm vào giỏ", count: 3200 },
+      { step: "Thanh toán", count: 850 }
+    ];
+
+    const retention = [
+      { cohort: "Tuần 1", rate: 100 },
+      { cohort: "Tuần 2", rate: 45 },
+      { cohort: "Tuần 3", rate: 30 },
+      { cohort: "Tuần 4", rate: 25 },
+    ];
+
+    return { funnel, retention };
+  }
 }

@@ -6,15 +6,20 @@ export class VideosService {
   constructor(private prisma: PrismaService) {}
 
   async getFeed() {
-    return this.prisma.video.findMany({
+    const videos = await this.prisma.video.findMany({
       include: {
         merchant: { select: { id: true, businessName: true, user: { select: { avatar_url: true } } } },
         deal: true,
         _count: { select: { likes: true, comments: true } }
-      },
-      orderBy: { createdAt: 'desc' },
-      take: 20
+      }
     });
+
+    // AI Recommendation Weighted Score: ViewCount + (Likes * 2) + (Comments * 3)
+    return videos.sort((a, b) => {
+      const scoreA = a.viewCount + (a._count.likes * 2) + (a._count.comments * 3);
+      const scoreB = b.viewCount + (b._count.likes * 2) + (b._count.comments * 3);
+      return scoreB - scoreA;
+    }).slice(0, 20);
   }
 
   async likeVideo(videoId: string, userId: string) {

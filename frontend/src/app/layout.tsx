@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/i18n/LanguageContext";
+import AIAssistant from "@/components/layout/AIAssistant";
 
 const beVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin", "vietnamese"],
@@ -13,8 +15,6 @@ export const metadata: Metadata = {
   description: "Nền tảng giao dịch địa phương: Deal + Social + Video + Booking. Du lịch, Nhà hàng, Spa, Khám sức khỏe.",
 };
 
-import { LanguageProvider } from "@/i18n/LanguageContext";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,6 +25,7 @@ export default function RootLayout({
       <body>
         <LanguageProvider>
           {children}
+          <AIAssistant />
         </LanguageProvider>
       </body>
     </html>
